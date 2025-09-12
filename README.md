@@ -33,6 +33,7 @@ if (position && ["top", "right", "bottom", "left"].includes(position.toLowerCase
 } else {
     position = "top";
 }
+loadCSS();
 let environmentIndicator = document.querySelector(".environment-indicator");
 for (let i = 0; i < environments.length; i++) {
     if (window.location.href.indexOf(environments[i].url) > -1 && !environmentIndicator) {
@@ -59,7 +60,6 @@ function mouseStopped() {
     let ev = document.querySelector(".environment-indicator");
     if (ev) ev.style.display = "grid";
 }
-loadCSS();
 function loadCSS() {
     let moduleID = "stadium-environments";
     if (!document.getElementById(moduleID)) {
